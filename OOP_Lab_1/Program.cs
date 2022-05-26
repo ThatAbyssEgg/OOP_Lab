@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Linq;
-using System.Text.Json;
 using System.Collections.Generic;
 using OOP.Data;
 
@@ -70,14 +68,14 @@ namespace OOP_Lab_1
             switch(inputFile)
             {
                 case 1:
-                    JsonStorage<LowerRoyality> jsonStorage = new JsonStorage<LowerRoyality>(@"C:\Users\Lenovo\source\repos\OOP_Lab_1\data.json");
-                    Repository repository = new Repository(new StorageArchiver<LowerRoyality>(jsonStorage, @"C:\Users\Lenovo\source\repos\OOP_Lab_1\data.zip"));
+                    JsonStorage<LowerRoyality> jsonStorage = new JsonStorage<LowerRoyality>(@"F:\Projects\OOP_Lab\data.json");
+                    Repository repository = new Repository(new StorageArchiver<LowerRoyality>(jsonStorage, @"F:\Projects\OOP_Lab\data.zip"));
                     InputActionCase(inputAction, repository);
                     break;
 
                 case 2:
-                    BinaryStorage<LowerRoyality> binaryStorage = new BinaryStorage<LowerRoyality>(@"C:\Users\Lenovo\source\repos\OOP_Lab_1\data.dat");
-                    repository = new Repository(new StorageCounter<LowerRoyality>(binaryStorage));
+                    BinaryStorage<LowerRoyality> binaryStorage = new BinaryStorage<LowerRoyality>(@"F:\Projects\OOP_Lab\data.dat");
+                    repository = new Repository(binaryStorage);
                     InputActionCase(inputAction, repository);
                     break;
             }
